@@ -1,0 +1,75 @@
+{
+  "bin": {
+    "docs-lint": "./dist/bin/docs-lint.js"
+  },
+  "bugs": "https://github.com/ksugawara61/docs-lint/issues",
+  "dependencies": {
+    "@textlint-ja/textlint-rule-preset-ai-writing": "1.7.0",
+    "markdownlint-cli2": "0.23.3",
+    "textlint": "15.8.0",
+    "textlint-rule-preset-ai-words-ja": "1.2.1",
+    "textlint-rule-preset-ja-technical-writing": "12.0.2"
+  },
+  "description": "Lint Japanese Markdown docs with textlint, markdownlint and a body character limit, reporting textlint only on changed lines",
+  "devDependencies": {
+    "@types/node": "25.2.0",
+    "knip": "^6.12.2",
+    "oxfmt": "^0.72.0",
+    "oxlint": "^1.87.0",
+    "typescript": "^6.0.3",
+    "vitest": "5.0.5"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./char-limit": {
+      "types": "./dist/char-limit/count.d.ts",
+      "default": "./dist/char-limit/count.js"
+    },
+    "./markdownlint": "./profiles/markdownlint.jsonc",
+    "./package.json": "./package.json",
+    "./profiles/*": "./profiles/*"
+  },
+  "files": [
+    "dist",
+    "!dist/**/*.map",
+    "profiles"
+  ],
+  "homepage": "https://github.com/ksugawara61/docs-lint#readme",
+  "keywords": [
+    "japanese",
+    "lint",
+    "markdown",
+    "markdownlint",
+    "textlint"
+  ],
+  "license": "MIT",
+  "name": "@ksugawara61/docs-lint",
+  "packageManager": "pnpm@11.1.2",
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ksugawara61/docs-lint.git"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "format": "oxfmt",
+    "format:check": "oxfmt --check",
+    "knip": "knip",
+    "lint": "oxlint",
+    "lint:docs": "node src/bin/docs-lint.ts",
+    "prepack": "pnpm build",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "type": "module",
+  "version": "0.1.0"
+}

@@ -1,0 +1,8 @@
+{
+  "filters": {},
+  "plugins": {},
+  "rules": {
+    "@textlint-ja/preset-ai-writing": true,
+    "preset-ja-technical-writing": true
+  }
+}
