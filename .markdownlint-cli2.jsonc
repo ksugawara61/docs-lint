@@ -1,0 +1,6 @@
+// このリポジトリの文書（pnpm lint:docs と VS Code の markdownlint 拡張）の設定。ルールはパッケージのプロファイルを使う
+{
+  "config": {
+    "extends": "./profiles/markdownlint.jsonc",
+  },
+}

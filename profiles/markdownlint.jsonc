@@ -1,0 +1,18 @@
+// markdownlint のプロファイル。既定ルールをすべて有効にし、日本語の文書に合わないものだけを外す。
+// 利用側のリポジトリルートの .markdownlint-cli2.jsonc が extends で読み、docs-lint と VS Code の拡張が同じルールで検査する。
+{
+  "default": true,
+  // 日本語の文は長く、改行位置で文意が変わらないよう行の長さは制限しない
+  "line-length": false,
+  "no-hard-tabs": false,
+  // 見出しの末尾の「？」「！」や句点を許す
+  "no-trailing-punctuation": false,
+  // <details> などの HTML を本文に書けるようにする
+  "no-inline-html": false,
+  "no-bare-urls": false,
+  "no-space-in-emphasis": false,
+  // 見出しのアンカーはホスティング先（GitHub・ドキュメントサイト）ごとに生成規則が違う
+  "link-fragments": false,
+  // スキル・サブエージェントの定義は front matter の直後が本文（プロンプト）で、h1 を足すとプロンプトが変わる
+  "first-line-heading": false,
+}
